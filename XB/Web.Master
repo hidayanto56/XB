@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Web.master.cs" Inherits="XB.Web" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%: Page.Title %> - CyberClass</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="App_Themes/main.css" type="text/css" />
+    <link rel="icon" type="image/png" href="Images/favicon6.png" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="overflow: hidden; clear: both;">
+            <div id="header">
+                <div id="logo">
+                    <a href="Default.aspx">
+                        <img src="Images/cc4.png" title="XB2013" alt="XB2013" /></a>
+
+
+                    <div id="login">
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <AnonymousTemplate>
+                                <ul>
+                                    <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">Register</a></li>
+                                    <li>|</li>
+                                    <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">Log in</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul>
+                                    <li>
+                                        <asp:Label ID="lblUser" runat="server" Text=""  ></asp:Label>
+                                        <%--<asp:LoginName ID="LoginName1" runat="server" CssClass="username" />--%>
+                                    </li>
+                                    <li>|</li>
+                                    <li>
+                                        <a id="A1" runat="server" class="username" href="~/Admin/Dashboard.aspx">Dashboard</a>
+                                    </li>
+                                    <li>|</li>
+                                    <li>
+                                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/Default.aspx" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+                </div>
+                <div id="nav">
+                    <ul>
+                        <asp:HyperLink ID="HyperLink" runat="server" NavigateUrl="~/Default.aspx">
+                        <li>Home</li>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Gallery.aspx">
+                        <li>Gallery</li>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/KRS.aspx">
+                            <li>KRS</li>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Member.aspx">
+                        <li>Members</li>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Contact.aspx">
+                        <li>Contact</li>
+                        </asp:HyperLink>
+                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/About.aspx">
+                        <li>About</li>
+                        </asp:HyperLink>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <aside id="sidebar">
+                <asp:TreeView ID="TreeView1" runat="server" ></asp:TreeView>
+                <p>Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar Sidebar </p>
+            </aside>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div>
+            <hr />
+            <footer id="footer">
+                <address>Copyright &copy <%: DateTime.Now.Year %> : hidayanto56 - CyberClass.com</address>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

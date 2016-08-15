@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="XB.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><%: Page.Title %> - Admin - CyberClass</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="../App_Themes/Admin.css" type="text/css" />
+    <link rel="icon" type="image/png" href="../Images/Favicon7.png" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="margin: 0 auto; padding: 0;">
+            <header id="header">
+                <h1 class="site_title"><a href="Dashboard.aspx">Website Admin</a></h1>
+                <h2 class="section_title"><%: Page.Title %></h2>
+                <div class="btn_view_site"><a href="../Default.aspx">View Site</a></div>
+            </header>
+
+            <section id="second_bar">
+                <div class="user">
+                    <p>
+                        <asp:Label ID="lblUser" runat="server" Text="User"></asp:Label> (<a href="#">3 msg</a>)</p>
+                </div>
+                <div class="breadcrumbs_container">
+                    <article class="breadcrumbs">
+                        <a href="Dashboard.aspx">Website Admin</a>
+                        <div class="breadcrumb_divider"></div>
+                        <a class="current"><%: Page.Title %></a>
+                    </article>
+                </div>
+            </section>
+
+            <aside id="sidebar" class="column">
+                <h3>CONTENT</h3>
+                <ul class="toggle">
+                    <li class="icn_new_article"><a href="NewArticle.aspx">New Article</a></li>
+                    <li class="icn_edit_article"><a href="">Edit Articles</a></li>
+                    <li class="icn_categories"><a href="Categories.aspx">Categories</a></li>
+                    <li class="icn_tags"><a href="">Tags</a></li>
+                </ul>
+                <hr />
+                <h3>USERS</h3>
+                <ul class="toggle">
+                    <li class="icn_add_user"><a href="">Add User</a></li>
+                    <li class="icn_view_users"><a href="">View Users</a></li>
+                    <li class="icn_profile"><a href="Profil.aspx">Your Profile</a></li>
+                </ul>
+                <hr />
+                <h3>MEDIA</h3>
+                <ul class="toggle">
+                    <li class="icn_folder"><a href="">File Manager</a></li>
+                    <li class="icn_photo"><a href="">Gallery</a></li>
+                    <li class="icn_video"><a href="">Video</a></li>
+                </ul>
+                <hr />
+                <h3>ADMIN</h3>
+                <ul class="toggle">
+                    <li class="icn_settings"><a href="">Option</a></li>
+                    <li class="icn_security"><a href="../Account/ChangePass.aspx">Change Password</a></li>
+                    <li class="icn_jump_back">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Logout" LogoutPageUrl="~/Default.aspx" />
+                    </li>
+                </ul>
+                <hr />
+                <footer>
+                    <p>
+                        <strong>Copyright &copy; <%: DateTime.Now.Year %> - CyberClass</strong>
+                    </p>
+                </footer>
+            </aside>
+            <section id="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+        </div>
+    </form>
+</body>
+</html>
