@@ -10,7 +10,7 @@
     <img src="Images/1429741256301.jpg" alt="XB-2013" style="border:ridge;"/></div>
     <br />
     <p>
-        CyberClass adalah sebuah group website yang dikelola secara bersama oleh semua anggota kelas XB angkatan 
+        CyberClass sendiri adalah sebuah website yang dikelola secara bersama oleh semua anggota kelas XB angkatan 
         tahun 2013, Jurusan Teknik Informatika Universitas Indraprasta PGRI, Jakarta.
         </p>
     <p>
